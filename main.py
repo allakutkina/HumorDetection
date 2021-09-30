@@ -38,7 +38,7 @@ t = Tokenizer()
 t.fit_on_texts(df['text'])
 
 # encode documents
-# TODO: store text to sequence
+
 encoded_docs = np.array(pad_sequences(t.texts_to_sequences(df['text'])))
 encoded_docs2 = np.array(pad_sequences(t.texts_to_sequences(df2['text'])))
 encoded_docs3 = np.array(pad_sequences(t.texts_to_sequences(df3['text'])))
@@ -47,7 +47,7 @@ encoded_dev = np.array(pad_sequences(t.texts_to_sequences(dev['text'])))
 max_len = max([len(text) for text in df['text']])
 
 
-dev = dev.drop('text', axis=1)
+
 #print(dev.head())
 
 train_x = encoded_docs[:int(0.8 * df.shape[0])]
@@ -169,12 +169,7 @@ predictions_task3_decoded = cat_to_label(predictions_task3, labels3_reverse)
 dev['humor_mechanism'] = predictions_task3_decoded
 print(dev.head())
 
-# TODO: Model 3 SHAPE
-# TODO: Model 3 organise right output (categorical prediction to labeld) done
-# TODO: try to improve baseline model: hyperparameters, vector word embeddings, features
-# TODO: filter away NAN values; create separate datasets for all three tasks
-# TODO: implement Macro F1
-# TODO: new labels
+
 
 model4 = Sequential()
 model4.add(Embedding(max_vocab + 1, embedding_vector_length, input_length=test_x4.shape[1]))
@@ -194,9 +189,9 @@ dev['humor_target'] = predictions_task4_decoded
 print(dev.head())
 
 # TODO: for model 4 fitting words can help (mentioned woman -> target etc).
-# TODO: Model 4 overfits as well!!
+# TODO: Model 4 overfits
 # TODO: Double labels for humor target
-
+dev = dev.drop('text', axis=1)
 dev.to_csv('out.CSV', index=False)
 
 
