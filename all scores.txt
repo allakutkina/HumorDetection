@@ -1,0 +1,56 @@
+baseline after hyperparameter tuning:
+
+Task1Score:0.742740891437
+Task2Score:0.720205492291
+Task3Score:0.097787238198
+Task4Score:0.174093264249
+
+
+baseline with lowercase:
+
+Task1Score:0.430019305019
+Task2Score:0.668181426183
+Task3Score:0.126424516066
+Task4Score:0.160694896851
+
+baseline with frozen embeds:
+Task1Score:0.630921619294
+Task2Score:0.662483144764
+Task3Score:0.0716911806626
+Task4Score:0.0210970464135
+
+
+after introducing word2vec adjust epocs
+
+word2vec: 06/09/2022 14:13:33
+Task1Score:0.757103257103
+Task2Score:0.660586603087
+Task3Score:0.161612876163
+Task4Score:0.158024691358
+
+word2vec frozen: 08/29/2022 10:57:18
+Task1Score:0.76038448335
+Task2Score:0.757294312469
+Task3Score:0.166386231776
+Task4Score:0.139592340951
+
+out 2,5,10,10 ep w2v 5 feats lstm5 feat 5
+Task1Score:0.7649579976
+Task2Score:2.36662487465
+Task3Score:0.116882627299
+Task4Score:0.124212421242
+
+out w2v 5 feat lstm 5 feat 1
+Task1Score:0.758155230596
+Task2Score:1.00524807808
+Task3Score:0.150221668449
+Task4Score:0.149474984558
+
+out w2v 8 feats lstm 5 feat 1
+Task1Score:0.767507939161
+Task2Score:0.788757463528
+Task3Score:0.119908956959
+Task4Score:0.12353304509
+
+
+
